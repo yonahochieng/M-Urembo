@@ -1,0 +1,63 @@
+<!--
+  Generated template for the ProductListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-item class="page_title">
+      <!--ion-avatar item-start> <img src="{{ serviceIcon }}"></ion-avatar-->
+    <ion-title>{{ service_descr }}</ion-title>
+  </ion-item>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <ion-list *ngFor="let prodCategory of productList;let i = index">
+      <div >
+          <ion-list-header class="ion-list-header">
+            {{ prodCategory.category_descr }}
+          </ion-list-header>
+
+          <ion-item-group reorder="false">
+
+            <div *ngFor="let productItems of prodCategory.product_list; let i = index">
+                
+              <ion-item detail-push no-lines class="page_title">
+                  {{ productItems.prodcut_name }}
+                </ion-item>
+
+                <ion-item text-wrap no-lines class="item_description">
+                    {{ productItems.prodcut_descr }}
+                </ion-item>
+
+                <ion-item no-lines>
+                    <ion-label class="item_description"><i>Request</i></ion-label>
+                    <ion-checkbox color="dark" checked="false" item-end></ion-checkbox>
+
+                </ion-item>
+                <ion-item-divider>
+                   
+                  <rating [(ngModel)]="productItems.rating" 
+                    readOnly="false" 
+                    max="5"
+                    emptyStarIconName="star-outline"
+                    halfStarIconName="star-half" 
+                    starIconName="star" 
+                    nullable="true"
+                    (ngModelChange)="onModelRateChange($event,productItems.product_id)">
+                  </rating>
+
+                    <button ion-button outline item-end class="btn_grey" (click)="loadProductDetails(productItems.product_id);">More Details</button>
+                    
+                  </ion-item-divider>
+            </div>
+
+          </ion-item-group>
+          
+      </div>
+    </ion-list>
+</ion-content>

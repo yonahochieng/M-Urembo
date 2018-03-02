@@ -1,0 +1,75 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.item-header{
+    font-weight: bold;
+    //font-style: italic;
+    font-family: cursive;
+    ion-avatar img{
+        float:left;
+    }
+}
+
+.page_title{
+    font-family: cursive;
+    background-color: #F8F8F8;
+}
+
+.item_list{
+    img{
+        background: #ffffff;
+        align-content: space-around;
+        border-radius: 5ex;
+        height: 40px;
+        width: 40px;
+        vertical-align:middle
+        
+    }
+    h2 , span{
+        font-weight: lighter;
+        margin-left: 5ex;
+    }
+}
+
+/*
+*PRODCUT LIST PAGE
+*/
+
+.item_description{
+    color: #858585;
+    font-weight: lighter;
+    text-transform: none;
+    overflow: hidden;
+}
+
+/*List Header
+*/
+
+.ion-list-header{
+    background-color: #cccccc;
+    font-weight: bold;
+    color: #000000;
+}
+
+/*
+Override default burron
+*/
+.btn_grey{
+
+    color: #858585;
+    border-color: inherit;
+}

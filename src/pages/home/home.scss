@@ -1,0 +1,36 @@
+page-home {
+    
+    .dash_slides{
+        height: 300px;
+        overflow: hidden;
+        
+    }
+    img.dash_image { 
+        height: 200px; 
+        width: 100%;
+        display: block !important;
+        border-radius: 1ex;
+        border-style: dotted;
+    }
+    .dash_descr{
+        background-color: #f8e9e9;
+        height: 60px;
+        font-size: 10pt;
+        overflow: hidden;
+        border-radius: 1ex;
+    }
+    .service_image{
+        height: 150px;
+        width: 150px;
+        float:unset;
+    }
+    ion-slide{
+        padding: 0 !important;
+        margin: 0 !important;
+       // background-color: #f4f0f8;
+        height: 500px;
+        align-content: space-around;
+        border-radius: 0.5ex;
+
+    }
+}

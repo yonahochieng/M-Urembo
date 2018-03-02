@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title class="page_title">
+      {{title}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+ 
+  <ion-slides class="dash_slides">
+    <ion-slide *ngFor="let dashboarditem of dashboardItems;let i = index">
+      <ion-grid>
+          <ion-row text-center>
+            <ion-col>
+                <ion-icon name="{{dashboarditem.dash_icon_name}}"></ion-icon> {{dashboarditem.dash_title}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+              <img class="dash_image" src="{{dashboarditem.dash_image}}"/>
+          </ion-row>
+          <ion-row class="dash_descr" text-center>
+              <p>{{dashboarditem.dash_descr}}</p>
+          </ion-row>
+          <!--ion-row text-center>
+              {{dashboarditem.dash_ext_link}}
+          </ion-row-->
+      </ion-grid>      
+    </ion-slide>
+  </ion-slides>
+
+    <ion-grid nowrap>
+      <ion-row *ngFor="let service of services;let i = index">
+        
+          <ion-card>
+            
+            <ion-item style="width:100%;">
+              <div class="item-header">
+                  <ion-avatar item-start> <img src="{{service.service_image}}"> {{service.service_name}}
+                    <ion-icon style="float:right;" name="information-circle" (click)='dialogueInfo(i);'></ion-icon>
+                  </ion-avatar>
+              </div>
+              <div (click)='servicesList(i);'  style="width:100%;">
+                <div class="service_image" text-center >
+                    <img src="{{service.service_image}}">
+                </div>
+              </div>
+              
+              <!--p>{{service.service_description}}</p-->
+            </ion-item>
+              
+          </ion-card>
+        
+      </ion-row>
+    </ion-grid>
+</ion-content>
